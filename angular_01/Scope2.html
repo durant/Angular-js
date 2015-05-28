@@ -1,0 +1,43 @@
+<!doctype html>
+
+<html ng-app>
+	<head>
+		<script src = "js/angular-1.2.8.js"></script>
+	</head>
+
+	<body>
+		<div ng-controller="EventController">
+			Root scope
+			<tt>MyEvent</tt> count:{{count}}
+			<ul>
+				<li ng-repeat="i in [1]" ng-controller="EventController">
+					<button ng-click="$emit('MyEvent')">
+						$emit('MyEvent')
+					</button>
+					<button ng-click="$broadcast('MyEvent')">
+						$broadcast('MyEvent')
+					</button>
+					<br>
+					Middle scope
+					<tt>MyEvent</tt> count: {{count}}
+					<ul>
+						<li ng-repeat="item in [1,2]" ng-controller="EventController">
+							Leaf scope
+							<tt>MyEvent</tt> count: {{count}}
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+
+		<div>
+			Click me: <input type="checkbox" ng-model="checked" ng-init="checked=true" /><br/>
+			Show when checked:
+			<span ng-if="checked" class="animate-if">
+ 				 I'm removed when the checkbox is unchecked.
+			</span>
+		</div>
+
+	</body>
+	<script src="Scope2.js"></script>
+</html>

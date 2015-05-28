@@ -1,0 +1,25 @@
+<!doctype html>
+
+<html ng-app>
+	<head>
+		<script src = "js/angular-1.2.8.js"></script>
+	</head>
+
+	<body>
+		<div class="show-scope-demo" >
+			<div ng-controller="GreetCtrl">
+				Hello {{name}}!
+			</div>
+			<div ng-controller="ListCtrl">
+				<ol>
+					<li ng-repeat="name in names">
+						{{name}} from {{department}}
+					</li>
+				</ol>
+			</div>
+		</div>
+
+	</body>
+	<script src="Scop1.js"></script>
+	<style type="text/css" src="Scop1.css"></style>
+</html>
